@@ -1,0 +1,4 @@
+(executable
+ (public_name ola)
+ (name main)
+ (libraries ola opal))
