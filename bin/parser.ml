@@ -1,7 +1,8 @@
 open Opal
 module Op = Opal;;
 
-
+module OlaParser =
+    struct
 type exp = PlusExp of exp * exp
     | SubExp of exp * exp
     | MulExp of exp * exp
@@ -53,3 +54,5 @@ and rop_expr input = (chainl1 add_expr (ltop <|> gtop)) input
 and add_expr input = (chainl1 mul_expr (addop <|> subop)) input
 and mul_expr input = (chainl1 prm_expr (mulop <|> divop)) input
 and prm_expr input = (parens expr <|> atom) input
+
+    end
