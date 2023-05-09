@@ -1,4 +1,5 @@
 (executable
  (public_name ola)
  (name main)
- (libraries ola opal))
+ (libraries ola opal)
+ (preprocess (pps ppx_deriving.show ppx_deriving.ord)))
